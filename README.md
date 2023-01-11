@@ -1,0 +1,2 @@
+# ideavimrc
+IdeaVimrc for PhpStorm
