@@ -1,0 +1,35 @@
+" https://github.com/JetBrains/ideavim
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Does this crap supports lua to source my vimrc? will see...
+" source ~/.config/nvim/init.lua " Source your .vimrc
+
+" Future Manos Problem: [ TODO: Integrate ideavim with nvim and reverse. ]
+
+let mapleader = ","
+
+" basic editor configuration
+set nu relativenumber
+set scrolloff=3
+set incsearch
+map Q gq
+nnoremap ; :
+
+" use visual mode during refactoring
+set idearefactormode=visual
+
+" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+map <leader>r <Action>(ReformatCode)
+map <leader>d <Action>(Debug)
+map <leader>b <Action>(ToggleLineBreakpoint)
+
+
+" Plugins - Supported plugins: https://github.com/JetBrains/ideavim/blob/master/doc/IdeaVim%20Plugins.md
+set surround
+set commentary
+set vim-paragraph-motion
+set ideajoin " https://github.com/JetBrains/ideavim/wiki/ideajoin-examples
+set highlightedyank
+
+let g:highlightedyank_highlight_duration = "850"
+let g:highlightedyank_highlight_color = "rgba(204, 255, 204, 100)"
