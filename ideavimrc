@@ -1,4 +1,5 @@
 " https://github.com/JetBrains/ideavim
+" https://vim.rtorr.com check here before overwrite anything useful
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 " Does this crap supports lua to source my vimrc? will see...
@@ -14,7 +15,8 @@ set scrolloff=3
 set incsearch
 set idearefactormode=visual " use visual mode during refactoring
 nnoremap ; :
-map S :%s//g<Left><Left>
+map s :%s//g<Left><Left>
+vmap s :'<,'>sort<CR>
 
 " fix the crappy §± chars that no human ever used from my 200$ keyboard, thanks apple :)
 imap § `
@@ -51,29 +53,59 @@ map μ m
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 " -- Single letter mappings
-map H <Action>(HideActiveWindow)
-map s <Action>(Switcher)
-map su <Action>(ShowUsages)
-map ? <Action>(Find)
-map r <Action>(Replace)
-map Q <Action>(ShowNavBar)
+map ?  <Action>(Find)
+map H  <Action>(HideActiveWindow)
+map Q  <Action>(ShowNavBar)
+map R  <Action>(RenameElement)
+map RC <Action>(RecentChangedFiles)
+map RD <Action>(DeleteRecentFiles)
+map Ra <Action>(ViewRecentActions)
+map Rb <Action>(GitToolBox.SwitchRecentBranches)
+map Rc <Action>(RecentChanges)
+map Rf <Action>(RecentFiles)
+map Rl <Action>(RecentLocations)
+map Rp <Action>(ManageRecentProjects)
+map S  <Action>(Switcher)
+map SS <Action>(Switcher)
+map Se <Action>(SwitcherRecentEditedChangedToggleCheckBox)
+map Sr <Action>(SwitcherAndRecentFiles)
+map Ss <Action>(Switcher)
+map tf <Action>(ActivateProjectToolWindow)
+map tt <Action>(ActivateTerminalToolWindow)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map gt <Action>(GotoTypeDeclaration)
+map gu <Action>(ShowUsages)
+map r  <Action>(Replace)
+vmap Y <Action>(EditorCopy)
 " -- Leader letter mappings
-map <leader>sn <Action>(ShowNavBar)
-map <leader>st <Action>(Stop)
-map <leader>dd <Action>(Debug)
-map <leader>db <Action>(ToggleLineBreakpoint)
-map <leader>gg <Action>(ActivateVersionControlToolWindowActivateVersionControlToolWindow)
+map <leader>B  <Action>(ShowBookmarks)
+map <leader>Db <Action>(ToggleLineBreakpoint)
+map <leader>Dd <Action>(Debug)
+map <leader>F  <Action>(ReformatCode)
+map <leader>O  <Action>(RevealIn)
+map <leader>P  <Action>(CloseProject)
+map <leader>S  <Action>(Stop)
+map <leader>cc <Action>(CompareClipboardWithSelection)
+map <leader>cf <Action>(CompareTwoFiles)
+map <leader>db <Action>(ToggleBookmark)
+map <leader>dm <Action>(DeleteMnemonicFromBookmark)
 map <leader>gc <Action>(ActivateCommitToolWindow)
+map <leader>gg <Action>(ActivateVersionControlToolWindow)
+map <leader>n  <Action>(NewElement)
+map <leader>o  <Action>(OpenFile)
 map <leader>pP <Action>(StringManipulation.PasteAsPhpArray)
 map <leader>pc <Action>(StringManipulation.PasteCamelCased)
 map <leader>pp <Action>(EditorPaste)
-map <leader>bs <Action>(ActivateTerminalToolWindow)
-map <leader>n <Action>(NewElement)
-map <leader>f <Action>(ReformatCode)
-map <leader>o <Action>(RevealIn)
-map <leader>r <Action>(RunAnything)
-map <leader>v <Action>(ChangeView)
-map <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>rb <Action>(EditBookmark)
+map <leader>rr <Action>(RunAnything)
+map <leader>sb <Action>(ShowBookmarks)
+map <leader>sn <Action>(ShowNavBar)
+map <leader>st <Action>(ActivateTODOToolWindow)
+map <leader>tb <Action>(ToggleBookmark)
+map <leader>tm <Action>(ToggleBookmarkWithMnemonic)
+map <leader>v  <Action>(ChangeView)
+map <leader>y  <Action>(EditorCopy)
 
 "" Plugins - Supported plugins: https://github.com/JetBrains/ideavim/blob/master/doc/IdeaVim%20Plugins.md
 set surround
